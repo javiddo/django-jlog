@@ -10,7 +10,7 @@ class Log():
         d = date.today().strftime("%d")
         m = date.today().strftime("%m")
         Y = date.today().strftime("%Y")
-        folder = settings.BASE_DIR / folder_name / Y / m / d
+        folder = settings.BASE_DIR +'/'+ folder_name +'/'+ Y +'/'+ m +'/'+ d
         os.makedirs(os.path.dirname(folder), exist_ok=True)
         file = str(folder) + '.log'
         if not os.path.exists(file):
