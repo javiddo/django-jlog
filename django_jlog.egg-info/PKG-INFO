@@ -1,9 +1,0 @@
-Metadata-Version: 2.1
-Name: django-jlog
-Version: 0.1
-Summary: Log your request and response data
-Home-page: https://github.com/javiddo/django-jlog
-Author: Javid Aliyev
-Author-email: jaliyev1987@gmail.com
-License: MIT
-License-File: LICENSE
