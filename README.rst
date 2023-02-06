@@ -9,14 +9,17 @@ Jlog
 
 Installation
 ::
+
  pip install django-jlog
 
 Set folder name in settings.py (by default it is `logs`)
 ::
+
  LOG_FOLDER_NAME='daily_logs'
 
 Usage
 ::
+
  from jlog.file import Log
 
 
