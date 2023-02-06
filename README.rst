@@ -5,7 +5,7 @@ Jlog
 
 * Package is intended to write logs if you work with requests and responses during integration with third party APIs
 
-* Date and time, log type (request/response), file path are added to every line
+* Date and time, log type (request/response) are added to every line
 
 Installation
 ::

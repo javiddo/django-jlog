@@ -6,7 +6,7 @@ README = open(os.path.join(here, 'README.rst')).read()
 
 setup(
     name='django-jlog',
-    version='1.0',
+    version='1.1',
     packages=['jlog'],
     long_description_content_type='text/x-rst',
     description="""Log your request and response data""",

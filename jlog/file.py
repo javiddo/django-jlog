@@ -1,8 +1,10 @@
+import inspect
 import os
 
 from django.conf import settings
 from django.http import HttpResponse
 from datetime import date, datetime
+
 
 class Log():
     @classmethod
@@ -10,7 +12,7 @@ class Log():
         d = date.today().strftime("%d")
         m = date.today().strftime("%m")
         Y = date.today().strftime("%Y")
-        folder = settings.BASE_DIR +'/'+ folder_name +'/'+ Y +'/'+ m +'/'+ d
+        folder = str(settings.BASE_DIR) + '/' + str(folder_name) + '/' + str(Y) + '/' + str(m) + '/' + str(d)
         os.makedirs(os.path.dirname(folder), exist_ok=True)
         file = str(folder) + '.log'
         if not os.path.exists(file):
@@ -26,14 +28,10 @@ class Log():
 
     @classmethod
     def __write(self, text='', args=[], log_type=None):
-        path = os.path.dirname(os.path.realpath(__file__))
-        filename = os.path.basename(__file__)
-
         log_file = self.__get_log_file()
         with open(log_file, 'a') as out_file:
-            text = '{datetime}: {request_type} {path}/{filename} - {text} {args}{delimiter}'.format(
-                datetime=str(datetime.now()), request_type=log_type, path=path,
-                filename=filename, text=text, args=args,
+            text = '{datetime}::{request_type} - {text} {args}{delimiter}'.format(
+                datetime=str(datetime.now()), request_type=log_type, text=text, args=args,
                 delimiter=os.linesep)
             out_file.write(text)
         return HttpResponse(text)
